@@ -1,5 +1,5 @@
 const getWeatherData = function (place, callback) {
-    fetch('http://localhost:3000/weather?address=' + encodeURIComponent(place)).then((response) => {
+    fetch('/weather?address=' + encodeURIComponent(place)).then((response) => {
         response.json().then(({ forecast, location, address, error } = {}) => {
             if (error) {
                 callback(error)

@@ -5,6 +5,8 @@ const geoAPI = require('./utils/geocode');
 const forecastAPI = require('./utils/forecast');
 
 const app = express();
+//Porta do Heroku vinda da variavel do sistema
+const port = process.env.PORT || 3000;
 
 // Define paths for Express Config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -91,6 +93,6 @@ app.get('*', (req, res) => {
 })
 
 //Starta o server na porta 3000
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
